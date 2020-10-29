@@ -85,11 +85,11 @@ public class Security {
         //Pravidlo 3c: 1 cislo.
         rules.add(new CharacterRule(EnglishCharacterData.Digit, 1));
 
-        System.out.println(Thread.currentThread().getContextClassLoader().getResource("most-common-passwords.txt").toExternalForm());
+        InputStream inputStream = getClass().getResourceAsStream("/most-common-passwords.txt");
 
         DictionaryRule rule = new DictionaryRule(
                 new WordListDictionary(WordLists.createFromReader(
-                        new FileReader[] {new FileReader(Thread.currentThread().getContextClassLoader().getResource("\\most-common-passwords.txt").toExternalForm())},
+                        new BufferedReader[] {new BufferedReader(new InputStreamReader(inputStream))},
                         false,
                         new ArraysSort()
                 ))

@@ -130,7 +130,7 @@ public class GUI_Registration extends javax.swing.JFrame {
                 //Kontrola siy hesla
                 Security security = new Security();
                 if(!security.passwordValidation(String.valueOf(jPasswordField3.getPassword()))){
-                    JOptionPane.showMessageDialog(rootPane, "Heslo je prilis slabe. Musi obsahovat aspon 6 znakov, velke, male pismeno, cislo a nesmie by medzi najpouzivanejsimi heslami.");
+                    JOptionPane.showMessageDialog(rootPane, "Heslo je prilis slabe. Musi obsahovat 6-32 znakov, velke, male pismeno, cislo a nesmie by medzi najpouzivanejsimi heslami.");
                 }
                 else {
                     String password = String.valueOf(jPasswordField2.getPassword());
